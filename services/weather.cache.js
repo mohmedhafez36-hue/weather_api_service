@@ -12,10 +12,11 @@ const  cacheMiddleware = (req,res,next) => {
         return res.json(cacheData);
     }
 
+    console.log(`Cache MISS: ${key}`);
     const originalJson = res.json;
     res.json = function (body){
         myCache.set(key,body);
-        originalJson.call(this,body);
+        return originalJson.call(this,body);
     }
     next();
 }
