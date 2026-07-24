@@ -20,4 +20,5 @@ const  cacheMiddleware = (req,res,next) => {
     next();
 }
 
-module.exports = cacheMiddleware;
+
+module.exports = cacheMiddleware 
