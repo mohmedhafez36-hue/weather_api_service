@@ -7,7 +7,7 @@ const AppError = require("../services/errorClass");
 async function getWeather(req, res,next) {
     const {q} = req.query
     if (!q) {
-    return next(new AppError("Query is required", 400));
+        return next(new AppError("Query is required", 400));
     }
     try{
     const response = await axios.get(
